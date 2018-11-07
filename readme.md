@@ -1,4 +1,4 @@
-# CMPE202-Team Project
+# CMPE202-Team Project
 
 ## Game Name: The Running Thief
 
