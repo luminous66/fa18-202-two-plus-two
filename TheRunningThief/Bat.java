@@ -8,12 +8,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bat extends Actor
 {
+    int batSpeed;
+    int leftBoundary;
+    int rightBoundary;
+    
+    public Bat(int speed, int leftBoundary, int rightBoundary) {
+        this.batSpeed = speed;
+        this.leftBoundary = leftBoundary;
+        this.rightBoundary = rightBoundary;
+    }
     /**
      * Act - do whatever the Bat wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        // Add your action code here.
+        move(batSpeed);
+        
+        if (getX() < leftBoundary || getX() > rightBoundary) {
+            batSpeed = -batSpeed;
+        }
     }    
 }
+
