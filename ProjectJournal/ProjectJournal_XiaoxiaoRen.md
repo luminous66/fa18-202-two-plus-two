@@ -12,11 +12,23 @@
 
 * What tasks I worked on:
 
+  * Design UI Interface of HomePage and all GamePages of Level 3.
+  * Build the initial framework.
+  * Implement Level 3 code.
+  * Implement HomePage command pattern of button "Play Game".
+
 * What I plan to work on next:
+
+  * Learn how to make Ad video.
+  * Refine the details of the game.
 
 * What tasks are blocked waiting on another team member:
 
+  * Waiting for all other GamePages of Level 1, Level 2 and Level 4. Then I can connect all GamePages using command pattern.
+
 * XP Core Value I keep:
+
+  * **Communication** : Work out the game details in group meeting.
 
 ## Week 2
 
