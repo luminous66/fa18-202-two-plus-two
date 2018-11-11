@@ -8,11 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HomePage extends World
 {
-    Thief thief = Thief.getThief();
-    WorldController worldCtrl = new WorldController();
-    
-    // Create by Xiaoxiao Ren, the IScreenComman variable.
+    Thief thief;
+    WorldController worldCtrl;
     private IScreenCommand playGame;
+    
+    // Create by Xiaoxiao Ren, the IScreenCommand variable.
     /**
      * Constructor for objects of class page.
      * 
@@ -25,7 +25,8 @@ public class HomePage extends World
         // Create by Xiaoxiao Ren, initial commmand parttern.
         playGame = new ScreenCommand();
         setReceiverPlayGame();
-        
+        worldCtrl = new WorldController();
+        thief = Thief.getThief();
         prepare();
     }
     

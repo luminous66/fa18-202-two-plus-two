@@ -45,6 +45,8 @@ public class Thief extends Actor
         checkDie();
         changePage();
         checkKey();
+        // Added By Yimu Yang
+        checkButton();
     }
     
     public void setDoor(Door d) {
@@ -63,6 +65,15 @@ public class Thief extends Actor
         removeTouching(Key.class);
     }
     
+    // Create by Yimu Yang. Red Button should be switched to White Button if touched by actor
+    private void checkButton() {
+        if (isTouching(RedButton.class)) {
+            Actor actor = getOneIntersectingObject(RedButton.class);
+            actor.setImage("whiteButton.png");
+            actor.move(0);
+        }
+    }
+
     // Create by Xiaoxiao Ren. Change page function.
     private void changePage() {
         if (getX() >= getWorld().getWidth() - 20) {
@@ -85,7 +96,7 @@ public class Thief extends Actor
         removeTouching(Diamond.class);
     }
     
-    // Create by Xiaoxiao Ren. Check if the thief touch something he should not touch.
+    // Create by Xiaoxiao Ren/Yimu Yang. Check if the thief touch something he should not touch.
     private void checkDie() {
         if (isTouching(Bat.class)) {
             //System.out.println("Touch bat");
@@ -95,6 +106,11 @@ public class Thief extends Actor
         Actor monster = getOneObjectAtOffset(25, 70, LandMonster.class);
         if (monster != null) {
             //System.out.println("Touch landmonster");
+            lives--;
+            this.setLocation(136,630);
+        }
+        
+        if (isTouching(SwordDown.class)) {
             lives--;
             this.setLocation(136,630);
         }
@@ -119,7 +135,7 @@ public class Thief extends Actor
         
         if (Greenfoot.isKeyDown("left")) {
                 setLocation(getX() - HSpeed, getY());
-            }
+        }
         
         if (Greenfoot.isKeyDown("space")) {
             jump();
