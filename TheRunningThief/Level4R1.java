@@ -17,11 +17,12 @@ public class Level4R1 extends GamePage {
         super();
     }
     
-    public void prepare() {
-        thief.lives = 3;
-        
+    public void prepare() {        
         addObject(thief,136,630);
         addObject(score,819,79);
+        
+        Points points = new Points();
+        addObject(points,817,28);
         
         RedButton redButton1 = new RedButton();
         RedButton redButton2 = new RedButton();
@@ -53,17 +54,18 @@ public class Level4R1 extends GamePage {
         Diamond diamond9 = new Diamond();
         Diamond diamond10 = new Diamond();
         
-        addObject(diamond1,300,700);
+        addObject(diamond1,300,690);
         addObject(diamond2,450,500);
-        addObject(diamond3,550,300);
-        addObject(diamond4,600,300);
-        addObject(diamond5,750,500);
-        addObject(diamond6,900,700);
+        addObject(diamond3,550,690);
+        addObject(diamond4,600,500);
+        addObject(diamond5,750,450);
+        addObject(diamond6,900,690);
         addObject(diamond7,950,500);
-        addObject(diamond8,1000,400);
-        addObject(diamond9,1050,300);
-        addObject(diamond10,1050,200);
+        addObject(diamond8,1000,550);
+        addObject(diamond9,1050,650);
+        addObject(diamond10,1050,500);
 
+        setPaintOrder(Thief.class, Diamond.class, RedButton.class);
     }
     
     

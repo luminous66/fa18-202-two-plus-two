@@ -18,6 +18,8 @@ public class WorldController {
     private GamePage level42;
     private GamePage level43;
     
+    private GamePage overPage;
+    
     // Modified by Yimu Yang
     public WorldController() {
         level31 = new Level3R1();
@@ -28,6 +30,8 @@ public class WorldController {
         level42 = new Level4R2();
         level43 = new Level4R3();
         
+        overPage = new OverPage();
+        
         pageChain.add(level31);
         pageChain.add(level32);
         pageChain.add(level33);
@@ -35,6 +39,8 @@ public class WorldController {
         pageChain.add(level41);
         pageChain.add(level42);
         pageChain.add(level43);
+        
+        
     }
     
     /* static WorldController getWorldController() {
@@ -46,6 +52,11 @@ public class WorldController {
     
     public List<GamePage> getPageChain() {
         return pageChain;
+    }
+    
+    // Author: Yimu Yang
+    public GamePage getOverPage() {
+        return overPage;
     }
     
 }

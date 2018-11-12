@@ -34,7 +34,7 @@ public class SwordDown extends Actor implements IButtonEventObserver {
      */
     public void act() {
         if (shouldFall == true) {
-            setLocation(getX(), getY() + 4);
+            setLocation(getX(), getY() + 8);
         } else {
             if (shouldMove) {
                 if (getX() == leftBound || getX() == rightBound) {

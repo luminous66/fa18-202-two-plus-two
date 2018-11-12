@@ -25,8 +25,10 @@ public class Level3R2 extends GamePage
     public void prepare()
     {
         addObject(thief,136,630);
-        Diamond diamond = new Diamond();
-        addObject(diamond,817,28);
+        Points points = new Points();
+        addObject(points,817,28);
+        //Diamond diamond = new Diamond();
+        //addObject(diamond,817,28);
         addObject(score,819,79);
         Bat bat = new Bat(2, 207, 209);
         addObject(bat,207,441);

@@ -6,8 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Thief extends Actor
-{
+public class Thief extends Actor {
     // Create by Xiaoxiao Ren. Implement Singleton Pattern.
     private static Thief thief;
     
@@ -38,11 +37,12 @@ public class Thief extends Actor
      * Act - do whatever the ThiefRight wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
-    {
+    public void act() {
+        // Added By Yimu Yang
+        isOver();
+        checkDie();
         checkMove();
         checkDiamond();
-        checkDie();
         changePage();
         checkKey();
         // Added By Yimu Yang
@@ -101,17 +101,30 @@ public class Thief extends Actor
         if (isTouching(Bat.class)) {
             //System.out.println("Touch bat");
             lives--;
+            System.currentTimeMillis();
+            
+            long curTime = System.currentTimeMillis();
+            while (System.currentTimeMillis() < curTime + 200);   
+            
             this.setLocation(136,630);
         }
         Actor monster = getOneObjectAtOffset(25, 70, LandMonster.class);
         if (monster != null) {
             //System.out.println("Touch landmonster");
             lives--;
+            
+            long curTime = System.currentTimeMillis();
+            while (System.currentTimeMillis() < curTime + 200); 
+            
             this.setLocation(136,630);
         }
         
         if (isTouching(SwordDown.class)) {
             lives--;
+            
+            long curTime = System.currentTimeMillis();
+            while (System.currentTimeMillis() < curTime + 200);
+            
             this.setLocation(136,630);
         }
     }
@@ -173,4 +186,14 @@ public class Thief extends Actor
         }
         return false;
     }
+    
+    // Author: Yimu Yang
+    private void isOver() {
+        if (lives <= 0) {
+            GamePage endPage = worldCtrl.getOverPage();
+            endPage.prepare();
+            Greenfoot.setWorld(endPage);
+        }
+    }
+    
 }

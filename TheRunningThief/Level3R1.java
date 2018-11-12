@@ -6,14 +6,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Level3R1 extends GamePage
-{
+public class Level3R1 extends GamePage {
     /**
      * Constructor for objects of class Level3R1.
      * 
      */
-    public Level3R1()
-    {
+    public Level3R1() {
         super();
     }
     
@@ -23,8 +21,10 @@ public class Level3R1 extends GamePage
      */
     public void prepare() {
         addObject(thief,136,630);
-        Diamond diamond = new Diamond();
-        addObject(diamond,817,28);
+        Points points = new Points();
+        addObject(points,817,28);
+        //Diamond diamond = new Diamond();
+        //addObject(diamond,817,28);
         addObject(score,819,79);
         LandMonster landMonster = new LandMonster(1, 420, 460);
         addObject(landMonster,440,670);
@@ -63,4 +63,5 @@ public class Level3R1 extends GamePage
         Bat bat = new Bat(5, 245, 1100);
         addObject(bat,245,461);
     }
+    
 }
