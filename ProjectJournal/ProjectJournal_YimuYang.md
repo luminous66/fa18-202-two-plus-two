@@ -11,12 +11,22 @@
 ## Week 1
 
 * What tasks I worked on:
+	
+	* Implement level 4 code.
+	* Implement observer pattern within level 4.
 
 * What I plan to work on next:
 
+	* Adjust level 4 code.
+	* Implement "Game Over" page.
+
 * What tasks are blocked waiting on another team member:
 
+	* Waiting for all other GamePages of Level 1, Level 2 to complete the "Game Over" page.
+
 * XP Core Value I keep:
+
+	* Communication and Simplicity.
 
 ## Week 2
 
